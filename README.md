@@ -7,13 +7,14 @@
 
 | 対象 | スキル | 詳しい使い方 |
 |---|---|---|
-| 日本語の研究原稿 | [check-japanese-manuscript](skills/check-japanese-manuscript/SKILL.md) | [USAGE.md](skills/check-japanese-manuscript/USAGE.md) |
-| 英語の論文原稿（学会論文を含む） | [check-english-manuscript](skills/check-english-manuscript/SKILL.md) | [USAGE.md](skills/check-english-manuscript/USAGE.md) |
+| 日本語研究原稿の論旨・説明 | [check-japanese-manuscript](skills/check-japanese-manuscript/SKILL.md) | [USAGE.md](skills/check-japanese-manuscript/USAGE.md) |
+| 英語論文の本文・見出し・図表キャプション・付録（学会論文を含む） | [check-english-manuscript](skills/check-english-manuscript/SKILL.md) | [USAGE.md](skills/check-english-manuscript/USAGE.md) |
 | 英語の研究発表用読み上げ原稿 | [check-english-presentation-script](skills/check-english-presentation-script/SKILL.md) | [USAGE.md](skills/check-english-presentation-script/USAGE.md) |
 
 原稿・参照ファイルは読取り専用で扱います。
 研究内容の確定や科学的な評価は著者が行います。
 英語の2スキルは、説明を日本語、引用と英文案を英語で返すことを既定とします。
+発表原稿は本文から文章を点検し、スライドとの照合、発音・話速・発表時間の評価は対象外です。
 
 ## 共通の使い方
 
@@ -35,29 +36,6 @@ AIが実際に読めた範囲を確認してください。
 ローカルLLMにも同じMarkdownを渡せます。
 原稿の分割やTypst／LaTeXソースの渡し方は、各スキルの `USAGE.md` を参照してください。
 
-## 日本語研究原稿の点検
-
-論旨や説明を読者が追えるかを点検します。
-
-> 原稿の「方法」節の日本語を点検してください。
-> 確認範囲を示し、理由と修正案または著者への質問を返してください。
-
-## 英語論文原稿の点検
-
-本文・見出し・図表キャプション・付録を点検します。
-図表や定義は、本文の判断に必要なものを併せて渡せます。
-
-> この論文のMethodsの英文を点検してください。
-> 説明は日本語、修正案は英語で、確認範囲と未確認事項を示してください。
-
-## 英語の研究発表用原稿の点検
-
-読み上げ原稿の文章を本文から点検します。
-スライドとの照合、発音・話速・発表時間の評価は対象外です。
-
-> この英語の読み上げ原稿を文章として添削してください。
-> 理由は日本語、英文案は英語で示し、研究情報が必要な箇所は具体的に質問してください。
-
 ## 構成と責務
 
 | ファイル | 責務 |
@@ -66,6 +44,9 @@ AIが実際に読めた範囲を確認してください。
 | 各スキルの `SKILL.md` | 対象、基本方針、原則、指摘と再確認の契約 |
 | 各スキルの `USAGE.md` | 入力例、環境ごとの渡し方、分割・再確認の手順 |
 | 各スキルの `references/` | 原則ごとの判断基準と例 |
+
+各スキルの参照はフォルダ内で完結し、他スキルやビルド処理に依存しません。
+`data/` の改稿資料と `docs/superpowers/` の計画・検証記録は保守用のローカル資料で、配布・利用時の依存に含めません。
 
 データは「原稿・著者補足 → 点検 → 指摘・理由・案または質問 → 利用者の修正 → 再確認」と流れます。
 再確認の記録は、対話内または利用者が保管する前回指摘から渡します。
